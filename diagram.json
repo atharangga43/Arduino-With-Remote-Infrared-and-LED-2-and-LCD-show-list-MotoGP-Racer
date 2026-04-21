@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "author": "abiyyu yaafi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 317.4, "left": 28.2, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -176,
+      "left": -42.4,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 82.8, "left": 455, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 82.8,
+      "left": 397.4,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": 192, "left": -230.4, "attrs": {} },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": 75.45, "left": 171.02, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 206.4,
+      "left": 402.65,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 206.4,
+      "left": 460.25,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:SCL", "uno:A5.2", "orange", [ "h-48", "v221.1", "h144" ] ],
+    [ "lcd1:SDA", "uno:A4.2", "green", [ "h-76.8", "v249.8", "h240.4" ] ],
+    [ "led2:A", "r1:1", "green", [ "v38.4", "h9.6" ] ],
+    [ "led1:A", "r2:1", "red", [ "v38.4", "h9.6" ] ],
+    [ "r2:2", "uno:3", "red", [ "v27.6", "h-234.4" ] ],
+    [ "r1:2", "uno:5", "green", [ "h0" ] ],
+    [ "ir1:DAT", "uno:2", "gold", [ "v38.4", "h67.2" ] ],
+    [ "ir1:GND", "uno:GND.1", "black", [ "v67.2", "h-48.3" ] ],
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h-124.8", "v307.2", "h306.9" ] ],
+    [ "led2:C", "uno:GND.1", "black", [ "v96", "h-201.2", "v67.2", "h-67.2" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "v134.4", "h-326" ] ],
+    [ "ir1:VCC", "uno:5V", "red", [ "v86.4", "h-220.8", "v316.8", "h207.4" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-96", "v278.5", "h96", "v441.6", "h230.4" ] ]
+  ],
+  "dependencies": {}
+}
